@@ -17,6 +17,7 @@ public class PetRepositoryImpl implements PetRepository {
 
     public PetRepositoryImpl() {
         Pet petOne = Pet.builder()
+        .petId(UUID.randomUUID())
         .name("Toby")
         .lastName("Restrepo")
         .ownerId(UUID.fromString("cbcada6c-a67e-475b-a519-63457b893a96"))
