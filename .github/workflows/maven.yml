@@ -5,6 +5,7 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
+# run: cd "${workspaceFolder}/pet"
 
 name: Java CI with Maven
 
@@ -29,7 +30,7 @@ jobs:
         cache: maven
         
     - name: Set project path
-      run: cd "${workspaceFolder}/pet"
+      run: pwd
     - name: folder list
       run: ls
       
