@@ -30,7 +30,7 @@ jobs:
         cache: maven
         
     - name: Set project path
-      run: pwd
+      run: cd pwd/pet
     - name: folder list
       run: ls
       
