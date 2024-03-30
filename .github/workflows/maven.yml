@@ -28,8 +28,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Set project path
-      run: cd pet \
-           ls
+      run: cd pet
+    - name: folder list
+      run: ls
       
     - name: Build with Maven
       run: mvn -B package
