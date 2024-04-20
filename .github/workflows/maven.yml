@@ -28,17 +28,49 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-      
-    - name: Build with Maven
-      run: |
-          cd ${{ github.workspace }}/pet
-          mvn -B package
-
-
-    - name: Maven Dependency Tree Dependency Submission
-      uses: advanced-security/maven-dependency-submission-action@v4.0.1
-      with:
         # The directory that contains the maven project
         directory: ${{ github.workspace }}/pet
+      
+    - name: Build with Maven
+      run: mvn -B package
+
+
+    - name: CodeReady Dependency Analytics
+      # You may pin to the exact commit or the version.
+      # uses: redhat-actions/crda@6310ee94a6ac8f76b4152b7267c6cd7f1277052c
+      uses: redhat-actions/crda@v1
+      with:
+        # Path to the directory containing the manifest_file.
+    
+        manifest_directory: ${{ github.workspace }}/pet
+        # Name (basename) of the manifest file to analyze. This file must exist in the manifest_directory.
+    
+        # manifest_file: # optional
+        # Command to use for dependencies installation instead of using the default commands.
+    
+        # deps_install_cmd: # optional
+        # Name of the file to save the analysis report
+        # analysis_report_name: # optional, default is crda_analysis_report
+        # Snyk token to be used to authenticate to the CRDA
+        # snyk_token: # optional
+        # Existing CRDA key to identify the existing user
+        # crda_key: # optional
+        # Github token to upload SARIF file to the GitHub
+        # github_token: # optional, default is ${{ github.token }}
+        # Upload the generated SARIF file, by default it is set to "true". If you don't want to upload SARIF file set this input to "false"
+        # upload_sarif: # optional, default is true
+        # Upload the generated SARIF and JSON file as an artifact.
+        # upload_artifact: # optional, default is true
+        # File name of the artifact to upload. By default it is named as 'crda_report'
+        # artifact_filename: # optional, default is crda_report
+        # CRDA collects anonymous usage data, and is disabled by default. If you want this behaviour set this to "true"
+        # consent_telemetry: # optional, default is false
+        # Fail the workflow if vulnerability is found in the project.
+        # This will lead to workflow failure and SARIF file would not be uploaded.
+        # To set failure when vulnerability severity level is either "error" or "warning" set this input to "warning".
+        # By default it is set to fail when severity level is "error",
+        # or if you don't want to fail the action set this input to "never"
+        # fail_on: # optional, default is error
             
+
      
