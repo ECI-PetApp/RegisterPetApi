@@ -49,5 +49,4 @@ jobs:
           cd ${{ github.workspace }}/pet 
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar 
           -Dsonar.projectKey=ECI-PetApp_RegisterPetApi
-          # -Dsonar.qualitygate.wait=true
           
