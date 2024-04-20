@@ -11,6 +11,7 @@
       "vscode": {
           "extensions": [
             "GitHub.copilot",
+            "vscjava.vscode-java-pack",
             "vmware.vscode-boot-dev-pack"
           ]
       }
