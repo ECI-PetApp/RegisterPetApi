@@ -29,7 +29,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
         # The directory that contains the maven project
-        directory: ${{ github.workspace }}/pet
+        # directory: ${{ github.workspace }}/pet
       
     - name: Build with Maven
       run: |
@@ -41,9 +41,9 @@ jobs:
       # uses: redhat-actions/crda@6310ee94a6ac8f76b4152b7267c6cd7f1277052c
       uses: redhat-actions/crda@v1
       with:
+        directory: ${{ github.workspace }}/pet
         # Path to the directory containing the manifest_file.
-    
-        manifest_directory: ${{ github.workspace }}/pet
+        # manifest_directory: ${{ github.workspace }}/pet
         # Name (basename) of the manifest file to analyze. This file must exist in the manifest_directory.
     
         # manifest_file: # optional
