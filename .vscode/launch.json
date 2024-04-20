@@ -4,7 +4,7 @@
             "type": "java",
             "name": "Spring Boot-PetApplication<pet>",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/pet",
             "mainClass": "com.eci.register.pet.PetApplication",
             "projectName": "pet",
             "args": "",
