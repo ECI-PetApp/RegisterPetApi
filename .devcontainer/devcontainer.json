@@ -1,0 +1,17 @@
+{
+  // Name this configuration
+  "name": "Codespace for Api Register Pet!",
+  // Use the base codespace image
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+
+  "remoteUser": "codespace",
+  "overrideCommand": false,
+  // Add the IDs of extensions you want installed when the container is created.
+  "customizations": {
+      "vscode": {
+          "extensions": [
+            "GitHub.copilot",
+            "vmware.vscode-boot-dev-pack"
+          ]
+      }
+}
